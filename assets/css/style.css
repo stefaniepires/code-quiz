@@ -1,66 +1,70 @@
 :root {
-    --dark-blue: #566385;
-    --light-blue: #93a3c5;
-    --tan: #e8debd;
-    --navy: #191718;
-  }
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    color: var(--tertiary-color);
-    font-family: Helvetica, Arial, sans-serif;
-  }
-
-  /*Header styling */
-header {
-    padding: 20px 35px;
-    background-color: var(--dark-blue);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    top: 0;
-    z-index: 9999;
-  }
-
-   /* copy centered on hero img */
-   main {
-    position:relative;
-    top:35%;
-    width:100%;
-    padding: 10%;
-    text-align:center;
-  }
-h2 {
-    color: var(--dark-blue);
-    font-size:30px;
-    letter-spacing:5px;
-    text-transform:uppercase;
-    background-color: #ffffff;
-    text-shadow: 2px 2px 80px black; 
+  --dark-blue: #566385;
+  --light-blue: #93a3c5;
+  --tan: #e8debd;
+  --navy: #191718;
 }
-  p {
-    color: var(--dark-blue);
-    font-size:20px;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--tertiary-color);
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/*Header styling */
+header {
+  padding: 20px 35px;
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  top: 0;
+  z-index: 9999;
+}
+
+/* copy centered on hero img */
+main {
+  position: relative;
+  top: 35%;
+  width: 100%;
+  padding: 10%;
+  text-align: center;
+}
+h2 {
+  color: var(--dark-blue);
+  font-size: 30px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  text-shadow: 2px 2px 80px black;
+  border-bottom: 1px solid;
+  padding-bottom: 20px;
+  margin: 0 auto 35px auto;
+  width: 52%;
+}
+p {
+  color: var(--dark-blue);
+  font-size: 19.5px;
+}
 
 .btn {
-    background-color: var(--light-blue);
-    color: #fff;
-    font-family: Helvetica, Arial, sans-serif;
-    border: none;
-    font-size:20px;
-    padding: 10px 20px;
-    border-radius: 10px;
-  }
+  background-color: var(--light-blue);
+  color: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  border: none;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
 
-  footer {
-    width: 100%;
-    padding: 40px 35px;
-    color: var(--dark-blue);
-    text-align:left;
-    font-size: 15px;
-  }
+footer {
+  width: 100%;
+  padding: 40px 35px;
+  color: var(--dark-blue);
+  text-align: left;
+  font-size: 15px;
+}
