@@ -13,16 +13,24 @@
 <div class="see-scores">
     <button class="btn" id="high-scores" type="submit">See Your Scores</button>
   </div>
+<h4 class="countdown" id="timer-text">75</h4>
 </header>
-<main>
-<h2>Coding Quiz Challenge</h1>
+<main class="page-content">
+<section class="start-screen" id ="start-screen">
+    <h2 class="title">Coding Quiz Challenge</h2>
     <br>
-    <p>Answer as many questions as you can correctly to gain points. </br><i>Watch out, though!</i> </br>If you answer incorrectly, seconds will be deducted from your timer. </br></br>GOOD LUCK!
+    < id= "para">Answer as many questions as you can correctly to gain points. </br><i>Watch out, though!</i> </br>If you answer incorrectly, seconds will be deducted from your timer. </br></br>GOOD LUCK!
     </p>
     <br>
     <div class="start">
-        <button class="btn" id="start-game" type="begin">Let's Go!</button>
+        <button class="startBtn" id="btn-start" type="submit">Let's Go!</button>
       </div>
+</section> 
+
+<section class="hidden" id="questions">
+    <h2 id="prompt"></h2>
+    <div class="choices" id="choices"></div>
+</section>
 </main>
     <footer>Made by Stefanie Tinsley</footer>
 

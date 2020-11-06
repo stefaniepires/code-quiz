@@ -46,12 +46,18 @@ h2 {
   margin: 0 auto 35px auto;
   width: 52%;
 }
+
+h4 {
+    color: #fff;
+    font-size: 35px;
+    
+}
 p {
   color: var(--dark-blue);
   font-size: 19.5px;
 }
 
-.btn {
+.btn, .startBtn {
   background-color: var(--light-blue);
   color: #fff;
   font-family: Helvetica, Arial, sans-serif;
