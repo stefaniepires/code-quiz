@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,20 +17,62 @@
 <h4 class="countdown" id="timer-text">75</h4>
 </header>
 <main class="page-content">
-<section class="start-screen" id ="start-screen">
     <h2 class="title">Coding Quiz Challenge</h2>
     <br>
     <p id= "para">Answer as many questions as you can correctly to gain points. </br><i>Watch out, though!</i> </br>If you answer incorrectly, seconds will be deducted from your timer. </br></br>GOOD LUCK!
     </p>
-    <br>
+    
+    <!-- This will be where quiz content goes-->
+    <section class="quiz-section">
+    <!--This is the start button-->
     <div class="start">
         <button class="startBtn" id="btn-start" type="submit">Let's Go!</button>
       </div>
 </section> 
 
-<section class="hidden" id="questions">
-    <h2 id="prompt"></h2>
-    <div class="choices" id="choices"></div>
+<!--Question Section-->
+<h2 class="question-header hidden" id="hidden">Quetion Here<span class="question"></span></h2>
+<!--Answer Buttons-->
+<div class="container buttons hidden" id="hidden">
+    <div class="answer-container">
+        <p id="btn-1" class="btn">Answer Choice A</p>
+    </div>
+    <div class="answer-container">
+        <p id="btn-2" class="btn">Answer Choice B</p>
+    </div>
+    <div class="answer-container">
+        <p id="btn-3" class="btn">Answer Choice C</p>
+    </div>
+    <div class="answer-container">
+        <p id="btn-4" class="btn">Answer Choice D</p>
+    </div>
+</div>
+<!--Correct/Incorrect-->
+<div class="display hidden">
+    <h4 id="validate"></p>
+<div>
+    <p>Score</p>
+    <h4 id="score">0</h4>
+</div>
+</div>
+<!-- End of game: score shown and saved to local storage -->
+<div class="end-game hidden">
+    <h2 class="end-title">End of Quiz!</h2>
+    <p>You scored: <span class="current-score">0</span></p>
+    <form method="post">
+        <label for="initials">Please enter your initials</label>
+        <input type="text" name="initials" id="initials" placeholder="Initials">
+        <button type="submit" class="submit" disabled>Submit</button>
+    </form>
+    <button class="skip">Skip</button>
+</div>
+<!--HighScores  -->
+<div class="high-scores hidden">
+    <h2>High Scores</h2>
+    <ul class="high-scores-list"></ul>
+    <button class="go-back">Go back</button>
+    <button class="clear-scores">Clear High Scores</button>
+</div>
 </section>
 </main>
     <footer>Made by Stefanie Tinsley</footer>
