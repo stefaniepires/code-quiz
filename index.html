@@ -1,4 +1,3 @@
-  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,69 +10,44 @@
 <body>
 <header>
 <!--This is where I want to put the see high scores section possibly-->
-<div class="see-scores">
     <button class="btn" id="high-scores" type="submit">See Your Scores</button>
   </div>
-<h4 class="countdown" id="timer-text">75</h4>
+  <p class="countdown" id="countdown">Time</p>
+  <p class="score" id="score"></p>
 </header>
 <main class="page-content">
-    <h2 class="title">Coding Quiz Challenge</h2>
+<section class="start-screen" id ="start-screen">
+    <h2 class="title question">Coding Quiz Challenge</h2>
     <br>
     <p id= "para">Answer as many questions as you can correctly to gain points. </br><i>Watch out, though!</i> </br>If you answer incorrectly, seconds will be deducted from your timer. </br></br>GOOD LUCK!
     </p>
-    
-    <!-- This will be where quiz content goes-->
-    <section class="quiz-section">
-    <!--This is the start button-->
+    <br>
     <div class="start">
-        <button class="startBtn" id="btn-start" type="submit">Let's Go!</button>
+        <button class="startBtn" id="start-task" type="submit">Let's Go!</button>
       </div>
 </section> 
-
-<!--Question Section-->
-<h2 class="question-header hidden" id="hidden">Quetion Here<span class="question"></span></h2>
-<!--Answer Buttons-->
-<div class="container buttons hidden" id="hidden">
-    <div class="answer-container">
-        <p id="btn-1" class="btn">Answer Choice A</p>
-    </div>
-    <div class="answer-container">
-        <p id="btn-2" class="btn">Answer Choice B</p>
-    </div>
-    <div class="answer-container">
-        <p id="btn-3" class="btn">Answer Choice C</p>
-    </div>
-    <div class="answer-container">
-        <p id="btn-4" class="btn">Answer Choice D</p>
-    </div>
-</div>
-<!--Correct/Incorrect-->
-<div class="display hidden">
-    <h4 id="validate"></p>
-<div>
-    <p>Score</p>
-    <h4 id="score">0</h4>
-</div>
-</div>
-<!-- End of game: score shown and saved to local storage -->
-<div class="end-game hidden">
-    <h2 class="end-title">End of Quiz!</h2>
-    <p>You scored: <span class="current-score">0</span></p>
-    <form method="post">
-        <label for="initials">Please enter your initials</label>
-        <input type="text" name="initials" id="initials" placeholder="Initials">
-        <button type="submit" class="submit" disabled>Submit</button>
-    </form>
-    <button class="skip">Skip</button>
-</div>
-<!--HighScores  -->
-<div class="high-scores hidden">
-    <h2>High Scores</h2>
-    <ul class="high-scores-list"></ul>
-    <button class="go-back">Go back</button>
-    <button class="clear-scores">Clear High Scores</button>
-</div>
+<section class="hidden" id="questions">
+    <h1 id="heading"></h1>
+    <div id="choices" class="choices"></div>
 </section>
+<section class="answerIs"></section>
+
+<div class="hidden" id="set-user-score">
+    <form>
+        <div class="row">
+          <div class="col">
+              <h2 id="final-score"></h2>
+              <h3>Enter your initals here to save your score!</h3>
+            <input type="text" class="form-control" id="initalsEntry" placeholder="Initals">
+          </div>
+        </div>
+        <button class="btn btn-secondary" type="button" id="submit">Submit</button>
+    </form>
+</div>
+<div class="hidden" id="view-scores">
+    <button type="button" class="btn btn-danger" id="clearBtn">Clear scores</button>
+    <button type="button" class="btn btn-dark" id="restart">Restart Quiz</button>
+</div>
 </main>
     <footer>Made by Stefanie Tinsley</footer>
 

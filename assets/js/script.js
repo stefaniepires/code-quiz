@@ -1,13 +1,14 @@
-//Element ID Selectors Here 
-const timerText = document.getElementById("timer-text"); 
-const btnStart = document.getElementById("btn-start");
+//query selectors
+var startButtonEl = document.getElementById("start-task");
+var countDownEl = document.getElementById("countdown");
 
-//Placeholder for Query Selectors
-
-
-//Global Variables go here
-//this variable is keeping track of the set-timer # in the html file
-let count = 75;
+//variables
+var timeLeft;
+var timeInterval;
+var currentIndex = 0;
+var score = 0;
+var correct = 10;
+var currentQuestion = 0;
 
 //array for questions
 var questionBank = [
@@ -43,50 +44,29 @@ var questionBank = [
     }
 ];
 
-//This is for the countdown
+//begin the quiz
+function startQuiz() {
+    //start quiz timer
+    quizTimer();
+    
+}
 
-//this event listener is listening to when the user clicks on the "Let's Go" button, then timer starts
-btnStart.addEventListener ("click", function() {
-    //display a number on the page and for every second that passes, that number decreases by 1
-    const timerId = setInterval(function (){ 
-    //this will update the timer text
-    //beginning with decreasing count by 1
-        count -=1;
-    //this will change the html text to be the actual value of count
-        timerText.textContent = count;
-        if(count === 0) {
-            timerText.textContent = "Time's Up!";
-            clearInterval(timerId);
-            alert("Check your scores to see how you did!")
-        
-        }
-//this means, for every 1 second, perform the above function
+function quizTimer() {
+    //time for quiz
+    var timeLeft = 75;
+    var timeInterval = setInterval(function() {
+    countDownEl.textContent = "Time left: " + timeLeft;
+    if(timeLeft === 0 ) {
+        countDownEl.textContent = "Times up!";
+        alert("The quiz is over! Lets see how you did.")
+        clearInterval(timeInterval);
+        //endGame();
+    }
+    else if (currentIndex === 6) {
+        clearInterval(timeInterval);
+    }
+    timeLeft--;
     }, 1000);
+}
 
-}); 
-
-
-//Start Quiz Function here
-
-//display questions
-
-//buttons for answers
-
-//to display questions
-
-//next question
-
-//Game Over
-
-//save scores
-
-//show scores
-
-//get scores 
-
-//show scores when click on button on home screen
-
-//restart quiz
-
-//event listeners
-
+startButtonEl.onclick = startQuiz;

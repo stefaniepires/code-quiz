@@ -52,9 +52,15 @@ h4 {
     font-size: 35px;
     
 }
-p {
+.para {
   color: var(--dark-blue);
   font-size: 19.5px;
+}
+
+.countdown, .score {
+    color: #fff;
+    font-size: 19.5px;
+    padding: 10px;
 }
 
 .btn, .startBtn {
@@ -67,10 +73,35 @@ p {
   border-radius: 10px;
 }
 
+.startBtn:hover {
+    box-shadow: 0 2px #000;
+    background-color: var(--dark-blue);
+  }
+
+  .btn:hover {
+    box-shadow: 0 2px #000;
+    background-color: #fff;
+    color: var(--dark-blue);
+  }
+ 
+.choices {
+    font-size: 15px;
+    display: block;
+    margin: 15px;
+}
+
+.choices:hover {
+    box-shadow: 0 2px var(--dark-blue);
+}
+
 footer {
   width: 100%;
   padding: 40px 35px;
   color: var(--dark-blue);
   text-align: left;
   font-size: 15px;
+}
+
+.hidden {
+    display: none;
 }
