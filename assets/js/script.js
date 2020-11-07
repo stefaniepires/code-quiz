@@ -58,7 +58,6 @@ function quizTimer() {
     countDownEl.textContent = "Time left: " + timeLeft;
     if(timeLeft === 0 ) {
         countDownEl.textContent = "Times up!";
-        alert("The quiz is over! Lets see how you did.")
         clearInterval(timeInterval);
         //endGame();
     }
