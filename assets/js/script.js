@@ -148,3 +148,17 @@ function endGame() {
     });
     setHighScores();
 };
+
+//looks for answer button clicks
+ansBtn1El.addEventListener("click", function () {
+    checkAnswer(0);
+});
+ansBtn2El.addEventListener("click", function () {
+    checkAnswer(1);
+});
+ansBtn3El.addEventListener("click", function () {
+    checkAnswer(2);
+});
+ansBtn4El.addEventListener("click", function () {
+    checkAnswer(3);
+});
