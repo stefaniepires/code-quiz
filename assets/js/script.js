@@ -149,6 +149,24 @@ function endGame() {
     setHighScores();
 };
 
+//hiding start-screen
+function startHider() {
+    //remove instructions and start Quiz button from page
+    instructionsEl.classList.add("hidden");
+    startBtnEl.classList.add("hidden");
+    viewHighScoresEl.classList.add("hidden");
+
+    // display questions and answers
+    questionLabelEl.classList.remove("hidden");
+    btnContainerEl.classList.remove("hidden");
+    displayEl.classList.remove("hidden");
+};
+
+
+startBtnEl.addEventListener("click", function () {
+    startHider();
+    startQuiz();
+});
 //looks for answer button clicks
 ansBtn1El.addEventListener("click", function () {
     checkAnswer(0);
