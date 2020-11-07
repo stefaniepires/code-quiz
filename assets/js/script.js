@@ -6,6 +6,14 @@ var questionEl = document.querySelector(".question");
 var btnContainerEl = document.querySelector(".answer-container");
 var displayEl = document.querySelector(".display");
 var endGameEl = document.querySelector(".end-game");
+var highScoresEL = document.querySelector(".high-scores");
+var submitEL = document.querySelector(".submit");
+var skipEl = document.querySelector(".skip");
+var goBackEl = document.querySelector(".restart");
+var clearScoresEl = document.querySelector(".clear-scores");
+var currentScoreEl = document.querySelector(".current-score");
+var highScoresListEL = document.querySelector(".high-scores-list");
+var viewHighScoresEl = document.querySelector(".high-scores");
 
 //Element Id selectors
 var scoreDisplayEl = document.getElementById("score");
@@ -108,7 +116,12 @@ function checkAnswer(selection) {
         // deduct 10 seconds from time
         timer -= 10;
     };
-
+    //setting delay before moving to next question and removing the ("Correct/Incorrect") result display
+    setTimeout(function () {
+        result.removeChild(text);
+        focusQuestion++;
+        getNextQuestion();
+    }, 300);
 
 };
 
@@ -149,6 +162,81 @@ function endGame() {
     setHighScores();
 };
 
+//submitting scores to local storage onclick
+function setHighScores() {
+    //display score
+    var currentScore = score;
+    currentScoreEl.textContent = currentScore;
+
+    //get highscores from localStorage or return an empty array if there aren't any
+    var highScores = JSON.parse(localStorage.getItem("highScores"));
+    if (!highScores) {
+        highScores = [];
+    };
+
+    //submit highscores to local storage and add them to highScores already stored.
+    submitEL.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        var initials = document.querySelector("#initials").value;
+
+        var mostRecentScore = {
+            score: currentScore,
+            initials: initials
+        };
+
+        highScores.push(mostRecentScore);
+
+        localStorage.setItem("highScores", JSON.stringify(highScores));
+        showHighScoresList();
+    });
+};
+
+//show highscores screen and display list from localStorage
+function showHighScoresList() {
+    //remove end game screen
+    endGameEl.classList.add("hidden");
+    //show high scores screen
+    highScoresEL.classList.remove("hidden");
+    addScoreList();
+    clearScores();
+};
+
+//get scores and add them to the leaderboard
+function addScoreList() {
+    //get highscores from localStorage and parse them
+    var highScores = JSON.parse(localStorage.getItem("highScores"));
+
+    //creating a list of scores from localStorage to display on the leaderboard
+    for (let i = 0; i < highScores.length; i++) {
+        var ListEl = document.createElement("li");
+        ListEl.className = "score-list";
+        ListEl.textContent = highScores[i].initials + "- " + highScores[i].score;
+        highScoresListEL.appendChild(ListEl);
+    }
+};
+
+function clearScores() {
+    //clear scores from local storage and remove the current list
+    clearScoresEl.addEventListener("click", function () {
+        localStorage.clear();
+        highScoresListEL.classList.add("hidden");
+    });
+};
+
+//show high scores screen when "View High Scores" is selected from home screen
+function viewHighScores() {
+    instructionsEl.classList.add("hidden");
+    startBtnEl.classList.add("hidden");
+    highScoresEL.classList.remove("hidden");
+    addScoreList();
+    clearScores();
+};
+//restart game
+function resetGame() {
+    location.reload();
+};
+
 //hiding start-screen
 function startHider() {
     //remove instructions and start Quiz button from page
@@ -167,6 +255,12 @@ startBtnEl.addEventListener("click", function () {
     startHider();
     startQuiz();
 });
+
+//reset game 
+skipEl.addEventListener("click", resetGame);
+goBackEl.addEventListener("click", resetGame);
+viewHighScoresEl.addEventListener("click", viewHighScores);
+
 //looks for answer button clicks
 ansBtn1El.addEventListener("click", function () {
     checkAnswer(0);
