@@ -10,10 +10,7 @@
   box-sizing: border-box;
 }
 
-body {
-  color: var(--tertiary-color);
-  font-family: Helvetica, Arial, sans-serif;
-}
+
 
 /*Header styling */
 header {
@@ -26,6 +23,10 @@ header {
   z-index: 9999;
 }
 
+body {
+
+    font-family: Helvetica, Arial, sans-serif;
+  }
 /* copy centered on hero img */
 main {
   position: relative;
@@ -34,14 +35,13 @@ main {
   padding: 10%;
   text-align: center;
 }
-h2 {
+h2, .question {
   color: var(--dark-blue);
   font-size: 30px;
   letter-spacing: 3px;
   text-transform: uppercase;
   background-color: #ffffff;
   text-shadow: 2px 2px 80px black;
-  border-bottom: 1px solid;
   padding-bottom: 20px;
   margin: 0 auto 35px auto;
   width: 52%;
@@ -52,7 +52,13 @@ h4 {
     font-size: 35px;
     
 }
-.para {
+
+h3 {
+    color: #191718;
+    font-size: 20px;
+    
+}
+#para, p {
   color: var(--dark-blue);
   font-size: 19.5px;
 }
@@ -73,27 +79,56 @@ h4 {
   border-radius: 10px;
 }
 
+.skip, .submit, .restart, .clear-scores {
+    background-color: var(--light-blue);
+  color: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  border: none;
+  font-size: 15px;
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+
 .startBtn:hover {
     box-shadow: 0 2px #000;
     background-color: var(--dark-blue);
   }
 
   .btn:hover {
-    box-shadow: 0 2px #000;
     background-color: #fff;
     color: var(--dark-blue);
   }
- 
-.choices {
-    font-size: 15px;
+
+  #btn-1, #btn-2, #btn-3, #btn-4 {
+    background-color: var(--light-blue);
+    color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+    border: none;
+    font-size: 20px;
+    padding: 5px 20px;
+    border-radius: 10px;
     display: block;
     margin: 15px;
-}
+  }
+ 
+  #btn-1:hover, #btn-2:hover, #btn-3:hover, #btn-4:hover {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+  }
 
-.choices:hover {
-    box-shadow: 0 2px var(--dark-blue);
+#score-text, #score {
+    color: #a9a9a9;
 }
-
+.high-scores-list {
+    display: block;
+    align-items: center;
+    list-style: none;
+    color: var(--dark-blue);
+    font-size: 17.5px;
+}
+#answer {
+    color:#838383;
+}
 footer {
   width: 100%;
   padding: 40px 35px;
@@ -104,4 +139,41 @@ footer {
 
 .hidden {
     display: none;
+    color: var(--dark-blue);
+  font-size: 14px;
+}
+
+
+/*Media Queries*/
+
+
+@media screen and (max-width: 980px) {
+    h2 {
+        justify-content: center;
+        width: 100%;
+        font-size: 26px;
+
+    }
+
+    .question{
+        justify-content: center;
+        width: 100%;
+        font-size: 20px;
+
+    }
+
+    #para {
+        justify-content: center;
+        width: 100%;
+        font-size: 20px;
+
+    }
+
+    
+    footer {
+        text-align: center;
+        width: 100%;
+    }
+  
+
 }

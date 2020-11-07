@@ -9,45 +9,72 @@
 </head>
 <body>
 <header>
-<!--This is where I want to put the see high scores section possibly-->
-    <button class="btn" id="high-scores" type="submit">See Your Scores</button>
+
+    <button class="btn" id="high-scores" type="submit">High Scores</button>
   </div>
-  <p class="countdown" id="countdown">Time</p>
-  <p class="score" id="score"></p>
+  <h4 class="countdown" id="countdown"></h4>
 </header>
 <main class="page-content">
+
+<!-- Start Screen -->
 <section class="start-screen" id ="start-screen">
-    <h2 class="title question">Coding Quiz Challenge</h2>
+    <h2 class="home">Coding Quiz Challenge</h2>
     <br>
-    <p id= "para">Answer as many questions as you can correctly to gain points. </br><i>Watch out, though!</i> </br>If you answer incorrectly, seconds will be deducted from your timer. </br></br>GOOD LUCK!
+    <p id= "para" class="home">Answer as many questions as you can correctly to gain points. </br><i>Watch out, though!</i> </br>If you answer incorrectly, seconds will be deducted from your timer. </br></br>GOOD LUCK!
     </p>
     <br>
-    <div class="start">
-        <button class="startBtn" id="start-task" type="submit">Let's Go!</button>
-      </div>
-</section> 
-<section class="hidden" id="questions">
-    <h1 id="heading"></h1>
-    <div id="choices" class="choices"></div>
 </section>
-<section class="answerIs"></section>
-
-<div class="hidden" id="set-user-score">
-    <form>
-        <div class="row">
-          <div class="col">
-              <h2 id="final-score"></h2>
-              <h3>Enter your initals here to save your score!</h3>
-            <input type="text" class="form-control" id="initalsEntry" placeholder="Initals">
-          </div>
-        </div>
-        <button class="btn btn-secondary" type="button" id="submit">Submit</button>
+<!-- quiz container -->
+<section class="quiz-box">
+<!--start button here-->
+    <section>
+        <button class="startBtn" id="start-task" type="submit">Let's Go!</button>
+    </section>
+<!--Question-->
+<h2 class="question-title hidden"><span class="question">Question</span> </h2>
+<!--Answer Buttons-->
+<div class="answer-container hidden">
+    <div class="answer-container">
+        <p id="btn-1" class="btn">Answer 1</p>
+    </div>
+    <div class="answer-container">
+        <p id="btn-2" class="btn">Answer 2</p>
+    </div>
+    <div class="answer-container">
+        <p id="btn-3" class="btn">Answer 3</p>
+    </div>
+    <div class="answer-container">
+        <p id="btn-4" class="btn">Answer 4</p>
+    </div>
+</div>
+<!-- this displays the score and the whether the answers were correct/incorrect -->
+<div class="display hidden">
+    <h3 id="answer"></h3>
+    <div>
+        <p id="score-text">Score</p>
+        <h3 id="score">0</h3>
+    </div>
+</div>
+<!-- End of game display where initial and score is shown to submit to localStorage -->
+<div class="end-game hidden">
+    <h2 class="end-title">End of Quiz!</h2>
+    <p>You scored: <span class="current-score">0</span></p>
+    <form method="post">
+        <label for="initials">Please enter your initials</label>
+        <input type="text" name="initials" id="initials" placeholder="Initials">
+        <button type="submit" class="submit" disabled>Submit</button>
     </form>
+    <button class="skip">Skip</button>
 </div>
-<div class="hidden" id="view-scores">
-    <button type="button" class="btn btn-danger" id="clearBtn">Clear scores</button>
-    <button type="button" class="btn btn-dark" id="restart">Restart Quiz</button>
+<!--HighScores leaderboard  -->
+<div class="high-scores hidden">
+    <h2>High Scores</h2>
+    <ul class="high-scores-list"></ul>
+    <button class="restart">Restart Quiz</button>
+    <button class="clear-scores">Clear High Scores</button>
 </div>
+</section> 
+
 </main>
     <footer>Made by Stefanie Tinsley</footer>
 
