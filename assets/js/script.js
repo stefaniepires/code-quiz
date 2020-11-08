@@ -68,7 +68,7 @@ ansBtns.push(ansBtn4El);
 //Start quiz 
 function startQuiz() {
     countdown();
-    timer = 75;
+    timer = 40;
     showQuestions();
 };
 
@@ -195,13 +195,7 @@ function addScoreList() {
     }
 };
 
-function clearScores() {
-    //clear scores from local storage 
-    clearScoresEl.addEventListener("click", function () {
-        localStorage.clear();
-        highScoresListEL.classList.add("hidden");
-    });
-};
+
 
 
 
@@ -220,6 +214,7 @@ function resetGame() {
     location.reload();
 };
 
+
 //hiding start-screen
 function startHider() {
     startScreenEl.classList.add("hidden");
@@ -236,6 +231,15 @@ startBtnEl.addEventListener("click", function () {
     startHider();
     startQuiz();
 });
+
+function clearScores() {
+    //clear scores from local storage 
+    clearScoresEl.addEventListener("click", function () {
+            localStorage.clear();
+        highScoresListEL.classList.add("hidden");
+    });
+};
+
 
 //reset game 
 skipEl.addEventListener("click", resetGame);
