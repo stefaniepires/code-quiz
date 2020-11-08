@@ -68,7 +68,9 @@ h3 {
     font-size: 19.5px;
     padding: 10px;
 }
-
+.countdown {
+  font-size: 35px;
+}
 .btn, .startBtn  {
   background-color: var(--light-blue);
   color: #fff;

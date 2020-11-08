@@ -224,7 +224,7 @@ function resetGame() {
 function startHider() {
     startScreenEl.classList.add("hidden");
     startBtnEl.classList.add("hidden");
-    viewHighScoresEl.classList.add("hidden");
+   
 
     questionLabelEl.classList.remove("hidden");
     btnContainerEl.classList.remove("hidden");
