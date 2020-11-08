@@ -1,6 +1,6 @@
 var timeEl = document.querySelector(".countdown");
 var startBtnEl = document.querySelector(".startBtn");
-var instructionsEl = document.querySelector(".start-screen");
+var startScreenEl = document.querySelector(".start-screen");
 var questionLabelEl = document.querySelector(".question-title");
 var questionEl = document.querySelector(".question");
 var btnContainerEl = document.querySelector(".answer-container");
@@ -13,7 +13,7 @@ var goBackEl = document.querySelector(".restart");
 var clearScoresEl = document.querySelector(".clear-scores");
 var currentScoreEl = document.querySelector(".current-score");
 var highScoresListEL = document.querySelector(".high-scores-list");
-var viewHighScoresEl = document.querySelector(".high-scores");
+var viewHighScoresEl = document.querySelector("#high-scores-button");
 var scoreDisplayEl = document.getElementById("score");
 var ansBtn1El = document.getElementById("btn-1");
 var ansBtn2El = document.getElementById("btn-2");
@@ -40,7 +40,7 @@ const questions = [
     },
     {
         question: "Which is the correct CSS syntax?",
-        answers: ["body {color: black}", "{body;color:black}", "{body:color=black(body}", "body:color=black"],
+        answers: ["body {color: black;}", "{body;color:black}", "{body:color=black(body}", "body:color=black"],
         correctAnswer: 0,
     },
     {
@@ -58,6 +58,7 @@ const questions = [
         correctAnswer: 1,
     }
 ];
+//push method adds bt1 to this array. 
 var ansBtns = [];
 ansBtns.push(ansBtn1El);
 ansBtns.push(ansBtn2El);
@@ -206,7 +207,7 @@ function clearScores() {
 
 //"View High Scores" 
 function viewHighScores() {
-    instructionsEl.classList.add("hidden");
+    startScreenEl.classList.add("hidden");
     startBtnEl.classList.add("hidden");
     highScoresEL.classList.remove("hidden");
     addScoreList();
@@ -221,7 +222,7 @@ function resetGame() {
 
 //hiding start-screen
 function startHider() {
-    instructionsEl.classList.add("hidden");
+    startScreenEl.classList.add("hidden");
     startBtnEl.classList.add("hidden");
     viewHighScoresEl.classList.add("hidden");
 

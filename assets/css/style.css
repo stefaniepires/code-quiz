@@ -69,7 +69,7 @@ h3 {
     padding: 10px;
 }
 
-.btn, .startBtn {
+.btn, .startBtn  {
   background-color: var(--light-blue);
   color: #fff;
   font-family: Helvetica, Arial, sans-serif;
