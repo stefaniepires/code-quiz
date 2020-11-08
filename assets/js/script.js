@@ -197,8 +197,6 @@ function addScoreList() {
 
 
 
-
-
 //"View High Scores" 
 function viewHighScores() {
     startScreenEl.classList.add("hidden");
