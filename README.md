@@ -19,4 +19,4 @@ https://steftinsley.github.io/code-quiz/
 
 Mockup of the site is below:
 
-![alt text](TBD)
+![alt text](https://github.com/steftinsley/code-quiz/blob/master/assets/screenshot%20of%20code%20quiz.png)
