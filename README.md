@@ -14,8 +14,7 @@
 
 
 You can preview the quiz live by clicking the link below:
-https://steftinsley.github.io/code-quiz/
-
+https://stefaniepires.github.io/code-quiz/
 
 Mockup of the site is below:
 
